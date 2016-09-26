@@ -1,7 +1,6 @@
-class Experience < ApplicationRecord
+class ExperiencesController < ApplicationRecord
 
-before_action :exp_params, only [:show, :edit, :update, :destroy]
-  belongs_to: user
+  before_action :set_exp, only: [:show, :edit, :update, :destroy]
 
   def index
     @experiences = Experience.all
@@ -26,14 +25,12 @@ before_action :exp_params, only [:show, :edit, :update, :destroy]
   def update
     @experience.update(exp_params)
     redirect_to experience_path(@experience)
-
   end
 
   def destroy
     @experience.destroy
     redirect_to experience_path
   end
-
 
 private
 
