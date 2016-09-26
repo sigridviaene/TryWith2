@@ -15,19 +15,6 @@ ActiveRecord::Schema.define(version: 20160926143637) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "events", force: :cascade do |t|
-    t.string   "title"
-    t.string   "location"
-    t.string   "description"
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.string   "address"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "experiences", force: :cascade do |t|
     t.string   "status"
     t.string   "description"
