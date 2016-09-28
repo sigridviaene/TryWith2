@@ -1,4 +1,4 @@
-class ExperiencesController < ApplicationRecord
+class ExperiencesController < ApplicationController
 
   before_action :set_exp, only: [:show, :edit, :update, :destroy]
 
@@ -39,7 +39,7 @@ private
   end
 
   def exp_params
-    params.require(:experience).permit(:startexperience, :user_id, :city, :title, :description)
+    params.require(:experience).permit(:startexperience, :city, :title, :description)
   end
 
 end
