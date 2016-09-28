@@ -1,0 +1,24 @@
+<div class="wrapper" >
+  <div class="container">
+    <div class="row">
+     <div class="col-xs-4" style="background-color: yellow">
+
+        <%= form_for(@experience) do |f| %>
+        <%= f.label :title %>
+        <%= f.text_field :title, placeholder: "what?" %>
+        <%= f.label :description %>
+        <%= f.text_area :description, placeholder: "what exactly?", style: "width: 300px; height: 150px;" %>
+        <%= date_field(:experience, :startexperience, options = {min: Date.today}) %>
+        <%= f.label :city %>
+        <%= f.text_field :city, placeholder: "where?"%>
+        <%= f.hidden_field :user_id %>
+        <%= f.submit %>
+      <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
