@@ -1,6 +1,5 @@
 class ExperiencesController < ApplicationController
-
-  before_action :set_exp, only: [:show, :edit, :update, :destroy]
+  before_action :set_exp, only: [:show]
 
   def index
     @experiences = Experience.all
@@ -15,21 +14,8 @@ class ExperiencesController < ApplicationController
 
   def create
     @experience = Experience.new(exp_params)
-    @experience.save
-    redirect_to experience_path
-  end
-
-  def edit
-  end
-
-  def update
-    @experience.update(exp_params)
+    @experience.save!
     redirect_to experience_path(@experience)
-  end
-
-  def destroy
-    @experience.destroy
-    redirect_to experience_path
   end
 
 private
@@ -39,7 +25,7 @@ private
   end
 
   def exp_params
-    params.require(:experience).permit(:startexperience, :user_id, :city, :title, :description)
+    params.require(:experience).permit(:startexperience, :city, :title, :description)
   end
 
 end
