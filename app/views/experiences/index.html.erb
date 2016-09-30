@@ -1,31 +1,44 @@
 <!-- app/views/experience/index.html.erb -->
-
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('background.jpg');">
-  <div class="banner-content">
-    <h1>Try with me</h1>
-    <p>Want to try this out? </p>
-    <a class="btn btn-primary btn-lg">Up for it! </a>
+<div class="wrapper" id="index-all-exp">
+  <div class="container">
+    <div class="row">
+    <div class="col-xs-12 col-sm-12" >
+        <h2>Try with Two</h2>
+          <h3>You would like to check out </h3>
+          <h4> a [movie/restaurant/exhibition/concert] </h4>
+          <h5>but don't fancy to go alone? </h5>
+          <h3> Find somebody with <strong>exactly</strong> the same idea! </h3>
+      </div>
+    </div>
   </div>
 </div>
+
+
 
 <div class="wrapper" >
   <div class="container">
     <div class="row">
       <p> Experience list:</p>
       <% @experiences.each do |exp| %>
-      <div class="col-xs-4" style="background-color: gray border-color: white; border-style: solid;">
-        <p>wat: <%= exp.title%> </p>
-        <p>descript: <%= exp.description%> </p>
-        <p>city: <%= exp.city%> </p>
-        <p>wnr: <%= exp.startexperience%> </p>
+      <div class="col-xs-12 col-sm-4">
 
+        <div class="card" img ="../../images/concert.jpg" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+          <div class="card-category"><%= exp.title%> </div>
+          <div class="card-description">
+            <h2> city: <%= exp.city%> </h2>
+            <p>descript: <%= exp.description%> </p>
+             <p>wnr: <%= exp.startexperience%> </p>
+          </div>
+          <img class="card-user avatar" img src="../../images/logo.png" id="logo">
+          <a class="card-link" href="#" ></a>
+        </div>
       </div>
       <%end%>
     </div>
 
     <div class="row">
-      <div class="col-xs-4" style="background-color: yellow;">
-        <div class="card-description">
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
           <p>Looking for a buddy?</p>
           <%= link_to 'create an experience', new_experience_path %>
         </div>

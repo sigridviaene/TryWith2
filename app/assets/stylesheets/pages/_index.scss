@@ -1,1 +1,13 @@
 @import "home";
+
+
+#index-all-exp{
+  background-color: #90F0CC;
+  color: #333333;
+  text-align: left;
+  height: 100vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  display: flex;
+  align-items: left;
+  justify-content: center;
+}

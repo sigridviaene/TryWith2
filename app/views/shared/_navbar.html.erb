@@ -1,8 +1,15 @@
 <div class="navbar-wagon">
+
+
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png" %>
-  <% end %>
+
+    <div class="navbar-left">
+        <%= link_to root_path, class: 'navbar-wagon-brand' do %>
+          <div> <%= image_tag 'logo.png',  class:'img-responsive', width: '80px' %></div>
+
+        <% end %>
+      </div>
+
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -20,10 +27,7 @@
 
       <!-- Notification -->
       <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-        <div class="badge-container">
-          <i class="fa fa-envelope-o"></i>
-          <div class="badge badge-blue">3</div>
-        </div>
+
       <% end %>
 
       <!-- Profile picture and dropdown -->
