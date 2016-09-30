@@ -14,6 +14,7 @@ class ExperiencesController < ApplicationController
 
   def create
     @experience = Experience.new(exp_params)
+    @experience.user_id = current_user.id
     @experience.save!
     redirect_to experience_path(@experience)
   end
