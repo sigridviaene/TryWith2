@@ -1,2 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="banner" style="background-image:url('<%= image_path @background %>')">
+
+  <div class="banner-content">
+
+    <h1>Try with Two</h1>
+    <h2>You would like to check out </h2>
+    <h2> a [movie/restaurant/exhibition/concert] </h2>
+    <h3>but don't fancy to go alone? </h3>
+    <h2> Find somebody with <strong>exactly</strong> the same idea! </h2>
+  <br>
+    <p>Have an extra ticket?</p>
+    <p> Propose an outing and find somebody who would love to go?</p>
+    <%= link_to 'check out the proposals!', experiences_path, class: "btn btn-primary btn-lg" %>
+
+  </div>
+</div>
+
+
+
