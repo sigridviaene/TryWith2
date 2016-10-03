@@ -1,12 +1,9 @@
 <div class="navbar-wagon">
-
-
   <!-- Logo -->
 
     <div class="navbar-left">
         <%= link_to root_path, class: 'navbar-wagon-brand' do %>
           <div> <%= image_tag 'logo.png',  class:'img-responsive', width: '80px' %></div>
-
         <% end %>
       </div>
 
@@ -33,7 +30,12 @@
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
+           <% if current_user.facebook_picture_url %>
+              <%= image_tag current_user.facebook_picture_url, class: "avatar-large dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <% else  %>
           <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <% end %>
+
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "#" do %>
@@ -62,7 +64,7 @@
     <% end %>
 
     <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to t(".top_call_to_action", default: "Propose an outing"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
