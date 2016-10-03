@@ -7,10 +7,8 @@
         <% end %>
       </div>
 
-
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
     <!-- Search form -->
     <form action="" class="navbar-wagon-search">
       <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
@@ -18,13 +16,10 @@
         <i class="fa fa-search"></i>
       </button>
     </form>
-
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
-
       <!-- Notification -->
       <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-
       <% end %>
 
       <!-- Profile picture and dropdown -->
@@ -64,7 +59,7 @@
     <% end %>
 
     <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Propose an outing"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to t(".top_call_to_action", default: "Propose an outing"), new_experience_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->

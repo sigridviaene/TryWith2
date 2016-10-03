@@ -1,24 +1,60 @@
-<div class="wrapper" >
+<div class="wrapper">
   <div class="container">
-    <div class="row">
-     <div class="col-xs-4" style="background-color: yellow">
+
+   <div class="row">
+    <div class="col-xs-offset-3 col-xs-6">
+     <h4> Hi <%= current_user.first_name %>, </h4>
+     <h2> would you like to propose an activity? </h2>
+     <h6> Let's go!</h2>
+     <br>
+     </div>
+   </div>
+
+   <div class="row">
+    <div class="col-sm-offset-3 col-sm-6">
+      <div id="create_new_proposal">
 
         <%= form_for(@experience) do |f| %>
-        <%= f.label :title %>
-        <%= f.text_field :title, placeholder: "what?" %>
-        <%= f.label :description %>
+         <div class="">
+              <h4> Title</h4>
+              <p> Give your activity a title [max 100 char.]</p>
+          </div>
+        <div class="">
+        <%= f.text_field :title, placeholder: "what?", style: "width: 300px; height: 40px;"%>
+        </div>
+
+        <div class="">
+            <h4> Description</h4>
+            <p> What does your activity entail more exactly? </p>
+        </div>
+        <div class="">
         <%= f.text_area :description, placeholder: "what exactly?", style: "width: 300px; height: 150px;" %>
+        </div>
+
+        <div class="">
+          <h4>Please enter a start date</h4>
+        </div>
+        <div class="">
         <%= date_field(:experience, :startexperience, options = {min: Date.today}) %>
+        </div>
+
+        <div class="">
+          <h4>Please enter the location</h4>
+        </div>
+
+          <div class="">
         <%= f.label :city %>
         <%= f.text_field :city, placeholder: "where?"%>
-        <%= f.hidden_field :user_id %>
-        <%= f.submit %>
-      <% end %>
+          </div>
 
+        <%= f.hidden_field :user_id %>
+        <br>
+        <%= f.submit %>
+        <% end %>
       </div>
     </div>
   </div>
+ </div>
 </div>
-
 
 
