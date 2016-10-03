@@ -1,0 +1,17 @@
+.devise-card{
+  border-style:solid;
+  border-color: $gray-darker;
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #ECECEC;
+  margin: 50px;
+  color: $gray-darker;
+}
+
+.links-to-other-options{
+  margin-top: 20px;
+    a {
+  text-decoration:none;
+  color: $gray-darker;
+ }
+}
