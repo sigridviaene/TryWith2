@@ -22,15 +22,25 @@
       <% @experiences.each do |exp| %>
       <div class="col-xs-12 col-sm-4">
 
-        <div class="card" img ="../../images/concert.jpg" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
-          <div class="card-category"><%= exp.title%> </div>
-          <div class="card-description">
-            <h2> city: <%= exp.city%> </h2>
-            <p>descript: <%= exp.description%> </p>
-             <p>wnr: <%= exp.startexperience%> </p>
+        <div class="card">
+
+        <%= link_to experience_path(exp) do %>
+
+
+          <div class="card-category">
+            <h5> Titel: <%= exp.title%> </h5>
           </div>
-          <img class="card-user avatar" img src="../../images/logo.png" id="logo">
-          <a class="card-link" href="#" ></a>
+          <br>
+          <br>
+          <div class="card-description">
+            <h5> City: <%= exp.city%> </h5>
+            <p>Description: <%= exp.description%> </p>
+             <p>When: <%= exp.startexperience%> </p>
+          </div>
+
+        <%= image_tag "logo.png", id: "logo", class: "card-user avatar" %>
+
+           <% end %>
         </div>
       </div>
       <%end%>
@@ -40,3 +50,4 @@
 
 
 <%= render 'shared/subfooter'%>
+

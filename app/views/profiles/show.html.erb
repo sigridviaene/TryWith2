@@ -1,0 +1,13 @@
+<div class="show-background"></div>
+<div class="padded">
+  <div class="profile-header-wrapper">
+    <div class="profile-header-container text-center">
+      <div class="profile-header-infos">
+
+        <% if current_user.facebook_picture_url %>
+        <%= image_tag current_user.facebook_picture_url, class:"avatar-large", data: { toggle: 'dropdown'} %>
+        <% else %>
+        <%= image_tag 'placeholder.png', class: "avatar",  data: { toggle: 'dropdown'}  %>
+        <% end %>
+        <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+      </div>
