@@ -1,3 +1,41 @@
 <!-- app/views/experiences/show.html.erb -->
-<h2><%= @experience.title %></h2>
-<p><%= @experience.description %></p>
+
+<div class="wrapper" id="index-all-exp">
+  <div class="container">
+    <div class="row">
+    <div class="col-xs-12 col-sm-12" >
+        <h2> <%= @experience.user.first_name%> </h2>
+          <h4>  is looking for someone to check out </h4>
+          <h5><%= @experience.title%></h5>
+          <h3> Would you like to join?</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="wrapper" >
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12" >
+
+        <div class="card" id="exp-show">
+          <div class="card-category">
+            <h5> Titel: <%= @experience.title%> </h5>
+          </div>
+          <br>
+          <br>
+          <div class="card-description">
+            <h5> City: <%= @experience.city%> </h5>
+            <p>Description: <%= @experience.description%> </p>
+            <p>When: <%= @experience.startexperience%> </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<%= render 'shared/subfooter'%>
