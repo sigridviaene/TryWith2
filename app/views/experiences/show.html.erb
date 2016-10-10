@@ -1,16 +1,16 @@
 <!-- app/views/experiences/show.html.erb -->
 
 <div id="show-title-wrapper">
-      <div id="title-exp">
-        <h3> Would you like to join <strong> <%= @experience.user.first_name%> </strong> to:</h3>
-        <h2><%= @experience.title%> </h2>
-      </div>
+  <div id="title-exp">
+    <h3> Would you like to join <strong> <%= @experience.user.first_name%> </strong> to:</h3>
+    <h2><%= @experience.title%> </h2>
+  </div>
 
-      <div id="short-profile-creator">
-        <%= image_tag @experience.user.facebook_picture_url, id: "creator-avatar", class: "avatar-large" %>
-        <h5><%= @experience.user.first_name%>'s profile</h5>
-        <%= link_to 'see profile', experiences_path %>
-      </div>
+  <div id="short-profile-creator">
+    <%= image_tag @experience.user.facebook_picture_url, id: "creator-avatar", class: "avatar-large" %>
+    <h5><%= @experience.user.first_name%>'s profile</h5>
+    <%= link_to 'see profile', experiences_path %>
+  </div>
 
 </div>
 
@@ -26,17 +26,23 @@
           </div>
           <br>
           <br>
+
+
           <div class="card-description">
             <h5> City: <%= @experience.city%> </h5>
             <p>Description: <%= @experience.description%> </p>
+            <p>link: <%= @experience.url %> </p>
+            <p>address: <%= @experience.address %> </p>
             <p>When: <%= @experience.startexperience%> </p>
             <p>Expected duration time: <%= @experience.stopexperience%> </p>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
+
   </div>
+</div>
 </div>
 
 
