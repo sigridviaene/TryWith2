@@ -2,53 +2,54 @@
 <div class="wrapper" id="index-all-exp">
   <div class="container">
     <div class="row">
-    <div class="col-xs-12 col-sm-12" >
+      <div class="col-xs-12 col-sm-12" >
         <h2>Try with Two</h2>
-          <h4>You would like to check out
+        <h4>You would like to check out
           a [movie/restaurant/exhibition/concert] </h4>
           <h5>but don't fancy to go alone? </h5>
           <h3> Find somebody with <strong>exactly</strong> the same idea! </h3>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<div class="wrapper" id="exp-index-wrapper">
-  <div class="container">
-    <div class="row">
-
-      <% @experiences.each do |exp| %>
-      <div class="col-xs-12 col-sm-4">
-
-        <div class="card">
-
-        <%= link_to experience_path(exp) do %>
-
-
-          <div class="card-category">
-            <h5> Titel: <%= exp.title%> </h5>
-          </div>
-          <br>
-          <br>
-          <div class="card-description">
-            <h5> City: <%= exp.city%> </h5>
-            <p>Description: <%= exp.description%> </p>
-             <p>When: <%= exp.startexperience%> </p>
-          </div>
-
-        <%= image_tag "logo.png", id: "logo", class: "card-user avatar" %>
-
-           <% end %>
         </div>
       </div>
-      <%end%>
     </div>
   </div>
-</div>
 
-<br>
-<%= render 'shared/subfooter'%>
-<br>
+
+
+  <div class="wrapper" id="exp-index-wrapper">
+    <div class="container">
+      <div class="row">
+
+        <% @experiences.each do |exp| %>
+        <div class="col-xs-12 col-sm-4">
+
+          <div  id="card-background">
+          <div class="card">
+
+            <%= link_to experience_path(exp) do %>
+
+            <div class="card-category">
+              <h5> Titel: <%= exp.title%> </h5>
+            </div>
+            <br>
+            <br>
+            <div class="card-description">
+              <h5> City: <%= exp.city%> </h5>
+              <p>Description: <%= exp.description%> </p>
+              <p>When: <%= exp.startexperience%> </p>
+            </div>
+
+            <%= image_tag "logo.png", id: "logo", class: "card-user avatar" %>
+
+            <% end %>
+          </div>
+          </div>
+        </div>
+        <%end%>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <%= render 'shared/subfooter'%>
+  <br>
 
