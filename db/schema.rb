@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161010170547) do
+ActiveRecord::Schema.define(version: 20161021131714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "experiences_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["experiences_id"], name: "index_categories_on_experiences_id", using: :btree
+  end
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
@@ -71,5 +79,6 @@ ActiveRecord::Schema.define(version: 20161010170547) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "categories", "experiences", column: "experiences_id"
   add_foreign_key "experiences", "users"
 end
