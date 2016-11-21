@@ -15,6 +15,16 @@
       <div id="create_new_proposal">
 
         <%= form_for(@experience) do |f| %>
+
+          <div class="">
+              <h4> Category</h4>
+          </div>
+          <div class="">
+                <%= f.collection_select(:category, Category.all, :id, :name) %>
+          </div>
+
+          <div class="row">
+
          <div class="">
               <h4> Title</h4>
               <p> Give your activity a title [max 100 char.]</p>
@@ -30,7 +40,6 @@
         <div class="">
         <%= f.text_area :description, placeholder: "what exactly?", style: "width: 300px; height: 150px;" %>
         </div>
-
 
           <div class="">
             <h4> url / link of event-page</h4>

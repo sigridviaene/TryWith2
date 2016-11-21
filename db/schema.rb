@@ -10,42 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20161024161154) do
-=======
-ActiveRecord::Schema.define(version: 20161021131714) do
->>>>>>> 7301fca250274e629653d6351eea84d24c6829e4
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-<<<<<<< HEAD
-    t.string   "title"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.integer  "experience_id"
-    t.index ["experience_id"], name: "index_categories_on_experience_id", using: :btree
-=======
     t.string   "name"
     t.integer  "experiences_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.index ["experiences_id"], name: "index_categories_on_experiences_id", using: :btree
->>>>>>> 7301fca250274e629653d6351eea84d24c6829e4
-  end
-
-  create_table "events", force: :cascade do |t|
-    t.string   "title"
-    t.string   "location"
-    t.string   "description"
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.string   "address"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
   end
 
   create_table "experiences", force: :cascade do |t|
@@ -93,11 +68,7 @@ ActiveRecord::Schema.define(version: 20161021131714) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-<<<<<<< HEAD
-  add_foreign_key "categories", "experiences"
-  add_foreign_key "experiences", "categories"
-=======
   add_foreign_key "categories", "experiences", column: "experiences_id"
->>>>>>> 7301fca250274e629653d6351eea84d24c6829e4
+  add_foreign_key "experiences", "categories"
   add_foreign_key "experiences", "users"
 end
