@@ -6,10 +6,12 @@ class ExperiencesController < ApplicationController
   end
 
   def show
+
   end
 
   def new
     @experience = Experience.new
+
   end
 
   def create
