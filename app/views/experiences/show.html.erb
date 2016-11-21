@@ -21,8 +21,8 @@
       <div class="col-xs-12 col-sm-12" >
           <div id="card-background">
         <div class="card" id="exp-show">
-          <div class="card-category">
-            <h5> Titel: <%= @experience.title%> </h5>
+          <div class="card-title">
+            <h5> <%= @experience.title%> </h5>
           </div>
           <br>
           <br>
@@ -33,7 +33,8 @@
             <p>Description: <%= @experience.description%> </p>
             <p>link: <%= @experience.url %> </p>
             <p>address: <%= @experience.address %> </p>
-            <p>When: <%= @experience.startexperience%> </p>
+            <p>On <%= @experience.startexperience.strftime('%a, %v')%>
+             at <%= @experience.startexperience.strftime('%R') %> </p>
             <p>Expected duration time: <%= @experience.stopexperience%> </p>
           </div>
           </div>

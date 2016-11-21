@@ -27,18 +27,24 @@
 
             <%= link_to experience_path(exp) do %>
 
-            <div class="card-category">
-              <h5> Titel: <%= exp.title%> </h5>
+            <div class="card-title">
+              <h3> <%= exp.title%> </h3>
             </div>
             <br>
             <br>
             <div class="card-description">
-              <h5> City: <%= exp.city%> </h5>
-              <p>Description: <%= exp.description%> </p>
-              <p>When: <%= exp.startexperience%> </p>
+              <p><%= exp.description%> </p>
+              <p>On <%=exp.startexperience.strftime('%a, %v')%>at <%=exp.startexperience.strftime('%R') %> </p>
+
             </div>
 
-            <%= image_tag "logo.png", id: "logo", class: "card-user avatar" %>
+            <div class="card-city">
+               <h4><%= exp.city%> </h4>
+            </div>
+
+            <div id="prof-pic-index">
+                <%= image_tag exp.user.facebook_picture_url, id: "creator-avatar", class: "card-user avatar"%>
+            </div>
 
             <% end %>
           </div>
