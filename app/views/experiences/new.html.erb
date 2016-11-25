@@ -20,7 +20,7 @@
               <h4> Category</h4>
           </div>
           <div class="">
-                <%= f.collection_select(:category, Category.all, :id, :name) %>
+                <%= f.collection_select(:category_id, Category.all, :id, :name) %>
           </div>
 
           <div class="row">
@@ -78,7 +78,8 @@
         <%= f.text_field :city, placeholder: "where?"%>
           </div>
 
-        <%= f.hidden_field :user_id %>
+        <%= f.hidden_field :user_id%>
+
         <br>
         <%= f.submit %>
         <% end %>
