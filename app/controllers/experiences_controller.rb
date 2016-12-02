@@ -3,14 +3,26 @@ class ExperiencesController < ApplicationController
 
   def index
     @search = params[:search_term] if  !params[:search_term].nil?
+    @city = params[:city] if  !params[:city].nil?
     @category = params[:category]
+
     @experiences = Experience.all
 
+    # filter on category
+    if @category.present?
+      @experiences = @experiences.where(category_id: params[:category])
+    end
 
-  # filter on category
-      if @category.present?
-        @experiences = @experiences.where(category_id: params[:category])
-      end
+    # filter on title/description
+    if @search.present?
+      @experiences = @experiences.where("LOWER(title) = ?", @search.downcase)
+    end
+
+    # filter on city
+    if @city.present?
+      @experiences = @experiences.where("LOWER(city) = ?", @city.downcase)
+    end
+
   end
 
   def show
